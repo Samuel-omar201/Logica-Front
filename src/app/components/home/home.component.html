@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+     
+    <div class="container">
+        <div class="table-wrapper jk">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2 class="move">Clientes registrados</h2></div>
+                    <div class="col-sm-4">
+                        <button routerLink="../client" type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Agregar Cliente</button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Indice</th>
+                        <th>Nombre Completo</th>
+                        <th>Titulo</th>
+                        <th>Telefono</th>
+                        <th>Nombre de la empresa</th>
+                        <th>Direccion de la empresa</th>
+                        <th>Numero de la empresa</th>
+                        <th>Acciones</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hy" *ngFor="let client of clients; let indice = index">
+                      <td (click)="verId(indice)">{{indice}}</td>
+                      <td (click)="verId(indice)">{{client.completeName}}</td>
+                      <td (click)="verId(indice)">{{client.title}}</td>
+                      <td (click)="verId(indice)">{{client.telephone}}</td>
+                      <td (click)="verId(indice)">{{client.companyName}}</td>
+                      <td (click)="verId(indice)">{{client.companyDirection}}</td>
+                      <td (click)="verId(indice)">{{client.companyTelephone}}</td>
+
+                        <td>
+                            <a (click)="verId(indice)" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a (click)="verId(indice)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>     
+                </tbody>
+            </table>
+        </div>
+    </div>     
+</body>
+</html>                
